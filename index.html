@@ -150,6 +150,42 @@
                     <div id="websockets-desc" class="tech-desc glass-card rounded-lg p-6"><h3 class="font-bold text-lg text-red-400 mb-2">WebSockets</h3><p class="text-slate-300">The core technology for our real-time communication. The server establishes a persistent, two-way WebSocket connection with each dashboard client. This allows the server to instantly "push" new vehicle data to the dashboard the moment it's received from the simulation, without the client needing to constantly ask for updates.</p></div>
                     <div id="chartjs-desc" class="tech-desc glass-card rounded-lg p-6"><h3 class="font-bold text-lg text-red-400 mb-2">Chart.js</h3><p class="text-slate-300">A powerful charting library used for all data visualization. We used Chart.js to create the line chart for tracking fleet-wide average speed and fuel consumption over time, as well as the doughnut chart that provides an at-a-glance view of the ratio of platooning versus solo vehicles in the fleet.</p></div>
                 </div>
+
+                <!-- How It Works Section -->
+                <div class="mt-16">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl md:text-5xl font-bold text-white header-title mb-4">How It Works?</h2>
+                    </div>
+                    
+                    <div class="glass-card rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-6">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl font-bold text-white header-title">CARLA Simulation Platform</h3>
+                        </div>
+                        
+                        <div class="text-slate-300 leading-relaxed space-y-4">
+                            <p class="text-lg">
+                                <span class="text-red-400 font-semibold">CARLA</span> (Car Learning to Act) is an open-source autonomous driving simulator that provides a realistic urban environment for testing and training AI-powered vehicles. Built on Unreal Engine 4, it offers photorealistic graphics and physics-accurate vehicle dynamics.
+                            </p>
+                            
+                            <p>
+                                Our system leverages CARLA's powerful simulation capabilities to create a virtual fleet of autonomous vehicles that learn optimal platooning behaviors through <span class="text-amber-400 font-semibold">reinforcement learning</span>. Each vehicle is equipped with advanced sensors and AI agents that make real-time decisions about speed, following distance, and lane changes.
+                            </p>
+                            
+                            <p>
+                                The magic happens when vehicles discover that by forming tight formations called <span class="text-sky-400 font-semibold">"platoons"</span> - similar to how race cars draft behind each other - they can significantly reduce air resistance and fuel consumption. Our RL algorithms continuously optimize these formations while maintaining safety and traffic flow.
+                            </p>
+                            
+                            <p>
+                                Real-time telemetry data from each simulated vehicle flows through our WebSocket infrastructure to this dashboard, allowing you to witness the fuel efficiency gains as they happen. It's autonomous driving meets aerodynamics, powered by cutting-edge AI.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
@@ -165,7 +201,7 @@
     const heroSection = document.getElementById('heroSection');
     const dashboardSection = document.getElementById('dashboardSection');
     const techStackSection = document.getElementById('techStackSection');
-    const statusIndicator = document.getElementById('statusIndicator').parentElement;
+    const statusIndicator = document.getElementById('statusIndicator');
     const techLogoContainers = document.querySelectorAll('.tech-logo-container');
     
     // --- WebSocket and Data State ---
